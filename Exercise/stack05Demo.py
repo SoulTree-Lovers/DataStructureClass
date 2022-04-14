@@ -27,14 +27,7 @@ def parenBalance(string:str) -> bool:
             print("문자열 {} 번째 위치에 있는 괄호가 닫히지 않았습니다".format(stack.pop()))
         balance = False
     
-    return balance
-
-    
-
- 
-    
-    
-    
+    return balance    
 
 case1 = "(1+2)*(3+5)"
 case2 = "((3*12)/(41-31))"
