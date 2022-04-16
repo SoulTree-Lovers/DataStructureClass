@@ -1,10 +1,4 @@
-# { w$WR | w : 문자열, wR : w의 순서를 뒤집어 놓은 것 }
-# abc$cba
-
-import sys
-sys.path.append("..")
-
-from LinkedList.LinkedListBasic import LinkedListBasic
+from LinkedListBasic import LinkedListBasic
 
 class LinkedStack:
     """연결 리스트로 구현한 스택 클래스"""
@@ -34,8 +28,3 @@ class LinkedStack:
         for i in range(self.__list.size()):
             print(self.__list.get(i), end = ' ')
         print()
-    
-    def size(self):
-        return self.__list.size()
-    
-    
