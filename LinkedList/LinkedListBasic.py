@@ -56,7 +56,7 @@ class LinkedListBasic:
             return self.__getNode(i).item
         else:
             return None
-  
+
     # x가 연결 리스트의 몇 번째 원소인지 알려주기
     def index(self, x) -> int:
         curr = self.__head.next   # 0번 노드 : 더미 헤드 다음 노드
@@ -65,7 +65,13 @@ class LinkedListBasic:
                 return index
             else:
                 curr = curr.next
-                return -2 # 안 쓰는 인덱스
+        return -2 # 안 쓰는 인덱스
+
+    def contains(self, x) -> bool:
+        if self.index(x) >= 0:
+            return True
+        else:
+            return False
   
     # 기타 작업들
     def isEmpty(self) -> bool:

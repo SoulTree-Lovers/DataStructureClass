@@ -85,7 +85,7 @@ class LinkedListBasicPlus:
                 return index
             else:
                 curr = curr.next
-                return -2 # 안 쓰는 인덱스
+        return -2 # 안 쓰는 인덱스
   
     # 기타 작업들
     def isEmpty(self) -> bool:
