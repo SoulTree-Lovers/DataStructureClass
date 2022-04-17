@@ -153,3 +153,9 @@ class LinkedListBasic:
             ret.append(curr.item)
             curr = curr.next
         return str(ret)
+
+    def isRight(self, node):
+        if self.__head == node.__head:
+            return True
+        else:
+            return False

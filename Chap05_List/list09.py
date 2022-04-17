@@ -153,3 +153,6 @@ class LinkedListBasic:
             ret.append(curr.item)
             curr = curr.next
         return str(ret)
+
+    def lastIndexOf(self, x):
+        

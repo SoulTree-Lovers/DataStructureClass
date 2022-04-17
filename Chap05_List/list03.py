@@ -153,3 +153,14 @@ class LinkedListBasic:
             ret.append(curr.item)
             curr = curr.next
         return str(ret)
+    
+    def printInterval(self, i:int, j:int):
+        curr = self.__head.next
+        count = 0
+        while count != i:
+            curr = curr.next
+            count += 1
+        
+        for _ in range(i, j+1):
+            print(curr.item)
+            curr = curr.next

@@ -27,14 +27,17 @@ class LinkedListBasic:
         self.__numItems += 1
   
     # 연결 리스트의 원소 삭제하기 
-    def pop(self, i:int): # i번 노드 삭제, 고정 파라미터
-        if (i >= 0 and i <= self.__numItems - 1):
+    def pop(self, i:int, k:int): # i번 ~ k번 노드 삭제
+        if 0 < i <= k < self.__numItems:
             prev = self.__getNode(i-1)
             curr = prev.next
-            prev.next = curr.next
-            retItem = curr.item
-            self.__numItems -= 1
-            return retItem
+                    
+            for n in range(i, k+1):
+                curr = curr.next
+                self.__numItems -= 1  
+
+            prev.next = curr      
+        
         else:
             return None
       
