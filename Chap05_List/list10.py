@@ -195,6 +195,12 @@ class CircularDoublyLinkedList():
         """이터레이터 메소드"""
         return CircularDoublyLinkedListIterator(self)
 
+    def lastIndexOf(self, x):
+        for i in range(self.size()-1, -1, -1):
+            curr = self.getNode(i)
+            if curr.item == x:
+                return i
+
 class CircularDoublyLinkedListIterator:
     """이터레이터 클래스"""
     def __init__(self, alist):

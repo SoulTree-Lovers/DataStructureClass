@@ -155,4 +155,9 @@ class LinkedListBasic:
         return str(ret)
 
     def lastIndexOf(self, x):
+        for i in range(self.size()-1, -1, -1):
+            curr = self.__getNode(i)
+            if curr.item == x:
+                return i
+            
         
