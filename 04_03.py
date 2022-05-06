@@ -4,7 +4,7 @@ def insert(name, number):
     phonebook[name] = number
 
 def delete(name):
-    del phonebook[name]
+    return phonebook.pop(name)
 
 def search(name):
     x = phonebook[name]

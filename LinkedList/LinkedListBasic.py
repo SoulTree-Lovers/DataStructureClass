@@ -52,7 +52,7 @@ class LinkedListBasic:
     def get(self, i:int):
         if self.isEmpty():
             return None
-        if (i >= 0 and i <= self.__numItems - 1):
+        if (i >= 0 and i <= self.__numItems-1):
             return self.__getNode(i).item
         else:
             return None
@@ -65,10 +65,10 @@ class LinkedListBasic:
                 return index
             else:
                 curr = curr.next
-        return -2 # 안 쓰는 인덱스
+        return None # 안 쓰는 인덱스
 
     def contains(self, x) -> bool:
-        if self.index(x) >= 0:
+        if self.index(x):
             return True
         else:
             return False
@@ -92,7 +92,7 @@ class LinkedListBasic:
                 cnt += 1
             curr = curr.next
         return cnt
-  
+    
     def extend(self, a): # a와 self는 같은 타입의 리스트
         for index in range(a.size()):
             self.append(a.get(index))
@@ -105,12 +105,14 @@ class LinkedListBasic:
     
     def reverse(self):
         a = LinkedListBasic()
+        
         for index in range(self.__numItems):
             a.insert(0, self.get(index))
         self.clear()
-      
-        for index in range(a.size()):
-            self.append(a.get(index))
+        self.extend(a)
+
+        #for index in range(a.size()):
+        #    self.append(a.get(index))
       
     def sort(self) -> None:
         a = []

@@ -34,7 +34,7 @@ class CircularDoublyLinkedList():
         if self.isEmpty():
             return None
         # 인덱스 i 결정
-        if len(args) != 0:  # pop(k)과 같이 인자가 있으면 i = k 할당
+        if len(args) != 0:  # pop(k)과 같이 인자가 있으면 i = k 할당 (인자의 개수가 여러개일 경우 첫 번째 인자만 취급)
             i = args[0]
         if len(args) == 0 or i == -1:   # pop()에 인자가 없거나 pop(-1)이면 i에 맨 끝 인덱스 할당
             i = self.__numItems - 1
@@ -124,10 +124,10 @@ class CircularDoublyLinkedList():
     def reverse(self) -> None:
         """리스트를 거꾸로 뒤집는 메소드"""
         prev = self.__head
-        curr = prev.next
-        next = curr.next
+        curr = self.__head.next
+        next = self.__head.next.next
 
-        self.__head.next = prev.prev
+        self.__head.next = self.__head.prev
         self.__head.prev = curr
 
         for _ in range(self.__numItems):

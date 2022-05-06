@@ -16,6 +16,10 @@ list.reverse()
 list.pop(0)
 
 print("count(3):", list.count(3))
-print("get(2):", list.get(2))
+print("get(2):", list.get(6))
+print("index(20): ", list.index(20))
+
+print("contains(10): ", list.contains(10))
+print("contains(20): ", list.contains(20))
 
 list.printList()
