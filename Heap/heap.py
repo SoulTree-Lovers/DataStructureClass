@@ -14,33 +14,29 @@ class Heap:
     def heapPrint(self):
         a = 0
         b = 1
-        while a <= len(self.__A):
-            for i in range(a, b):
-                print(self.__A[i], end=" ")
-                a += 1
-            b *= 2    
-
-    def heapPrint(self):
-        i=0
-        j = 1
-
         while 1:
-            for _ in range(j):
-                if i>= len(self.__A):
-                    print()
+            for i in range(b):
+                if a >= len(self.__A):
+                    print("\n===============================")
                     return 0
-                print(self.__A[i] , end =' ')
-                i+=1
+                print(self.__A[a], end = " ")
+                a += 1
+            b *= 2
             print()
-            j *= 2 
-
             
-
-
-
-            
-
-    
+    #def heapPrint(self):
+    #    i = 0
+    #    j = 1
+    #    while 1:
+    #        for _ in range(j):
+    #            if i >= len(self.__A):
+    #                print()
+    #                return 0
+    #            print(self.__A[i] , end =' ')
+    #            i += 1
+    #        print()
+    #        j *= 2
+        
     # 스며오르기
     def __percolateUp(self, i:int):
         parent = (i - 1) // 2
