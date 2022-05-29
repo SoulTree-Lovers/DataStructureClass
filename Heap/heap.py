@@ -7,9 +7,20 @@ class Heap:
             self.__A = []
 
     # 힙에 원소 삽입하기 (재귀 알고리즘 버전)
+    # def insert(self, x):
+    #     self.__A.append(x)
+    #     self.__percolateUp(len(self.__A)-1)
+
+    #반복문 버전
     def insert(self, x):
+        i = len(self.__A) 
         self.__A.append(x)
-        self.__percolateUp(len(self.__A)-1)
+        parent = (i - 1) // 2
+        
+        while i > 0 and self.__A[i] > self.__A[parent]:
+            self.__A[i], self.__A[parent] = self.__A[parent], self.__A[i]
+            i = parent
+            parent = (i - 1) // 2
 
     def heapPrint(self):
         a = 0
@@ -23,19 +34,6 @@ class Heap:
                 a += 1
             b *= 2
             print()
-            
-    #def heapPrint(self):
-    #    i = 0
-    #    j = 1
-    #    while 1:
-    #        for _ in range(j):
-    #            if i >= len(self.__A):
-    #                print()
-    #                return 0
-    #            print(self.__A[i] , end =' ')
-    #            i += 1
-    #        print()
-    #        j *= 2
         
     # 스며오르기
     def __percolateUp(self, i:int):
@@ -73,7 +71,7 @@ class Heap:
 
     # 힙 만들기
     def buildHeap(self):
-        for i in range((len(self.__A) - 2) // 2, -1, -1):
+        for i in range((len(self.__A) - 1) // 2, -1, -1):
             self.__percolateDown(i)
     
     # 힙이 비었는지 확인하기
@@ -87,4 +85,7 @@ class Heap:
     # 힙 사이즈
     def size(self) -> int:
         return len(self.__A)
+    
+    def printList(self):
+        return self.__A
         

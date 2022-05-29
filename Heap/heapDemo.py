@@ -17,3 +17,12 @@ h1.insert(11)
 h1.heapPrint()
 h1.deleteMax()
 h1.heapPrint()
+
+
+print(h1.printList())
+
+h2 = Heap([4, 12, 3, 5, 10, 7, 2, 15, 9, 8, 1, 6, 11, 13])
+h2.buildHeap()
+
+h2.heapPrint()
+print(h2.printList())
